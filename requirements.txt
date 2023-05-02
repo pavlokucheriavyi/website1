@@ -2,7 +2,6 @@
 Django==4.0.1
 django-crispy-forms==1.14.0
 django-phonenumber-field==6.1.0
-django-phonenumbers==1.0.1
 django-ranged-response==0.2.0
 django-sendgrid-v5==1.2.0
 django-simple-captcha==0.5.17
@@ -38,7 +37,6 @@ hyperlink==21.0.0
 idna==2.8
 importlib-metadata==4.12.0
 incremental==21.3.0
-indicator-cpufreq==0.2.2
 ipython==7.13.0
 ipython_genutils==0.2.0
 itemadapter==0.4.0
