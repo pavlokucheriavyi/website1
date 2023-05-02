@@ -1,14 +1,5 @@
 
-
-
-
-constantly==15.1.0
-cryptography==2.8
-cssselect==1.1.0
-Cython==0.29.28
-dbus-python==1.2.16
 decorator==4.4.2
-defer==1.0.6
 distlib==0.3.4
 distro==1.4.0
 distro-info===0.23ubuntu1
