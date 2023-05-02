@@ -1,0 +1,42 @@
+{% extends "blog/base.html" %}
+
+{% block title %}
+{{title}}
+{% endblock %}
+{% block content %}
+
+    <div class="alert alert-light">
+    <h1>{{i.title}}</h1>
+    <p>{{i.text}}</p>
+    <div class="row">
+      <div class="post">
+        <img src="{{ i.avtor.profile.img.url }}" alt="{{ i.avtor }}" class="user_images">
+        <div class="post__info">
+          <span class="text-muted">Публикация: {{i.date|date:"d E Y в H:i"}}</span>
+          {% if i.avtor %}
+              <p><b>Aвтор:</b><a href="{% url 'user_news' i.avtor %}" class="m-1">{{ i.avtor }}</a></p> <!-- ПОСТ.АВТОР - БЕРЁМ ЛОГИН АВТОРА -->
+          {% else %}
+              <p>Aвтор:<mark> Pasha</mark></p>
+          {% endif %}
+        </div>
+      </div>
+      </div>
+      {% if object.avtor == user %}
+        <hr>
+        <a href="{% url 'news_update' object.id %}" class='btn btn-outline-info'>Обновить статью</a>
+        <a href="{% url 'news_delete' object.id %}" class='btn btn-outline-danger ml-2'>Удалить статью</a>
+      {% endif %}
+    </div>
+
+{% endblock %}
+
+{% block aside_block %}
+<h3>Боковая часть</h3>
+<h1 class = "mt-2">Интересные статьи</h1>
+<p>Обезьяны обитают в тропических и субтропических регионах Америки, Африки (за исключением Мадагаскара), в Гибралтаре, а также в Южной и Юго-Восточной Азии вплоть до Японии. Человек населяет все континенты за исключением Антарктиды (где не живёт постоянно, но постоянно присутствует).</p>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/94/Monkey_batu.jpg" class="img-thumbnail mt-2">
+<p><h2>Бегают в джунглях</h2></p>
+<a href="https://ru.wikipedia.org/wiki/%D0%9E%D0%B1%D0%B5%D0%B7%D1%8C%D1%8F%D0%BD%D1%8B" target = "_blank">
+<button class="btn btn-info">Посмотреть</button>
+</a>
+{% endblock %}

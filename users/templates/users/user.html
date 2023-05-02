@@ -1,0 +1,17 @@
+{% extends "blog/base.html" %}
+{% block title %}
+Страница авторизации
+{% endblock %}
+
+{% block content %}
+<p><h1>Страница авторизации</h1></p>
+<form method="post" class="form-register auth">
+    {% csrf_token %}
+    {{ form.as_p }}
+<p>Вы ещё не зарегистрированы?<a href="{% url 'registr' %}"> Зарегистрироваться</a></p>
+<p>Забыли пароль? <a href="{% url 'password_reset' %}">Восстановить</a></p>
+    <button class="btn btn-warning" type='submit'>Войти</button>
+</form>
+{% endblock %}
+{% block aside_block %}
+{% endblock %}
